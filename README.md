@@ -10,4 +10,8 @@ Imagine you have to do this to more than 10 users. It is best to use a script.
 I wrote the script to:
 1. Connect to EAC using [Connect-ExchangeOnline](https://learn.microsoft.com/en-us/powershell/module/exchange/connect-exchangeonline?view=exchange-ps). This is the best method if your environment uses MFA authentication.
 2. Import in the CSV file. The file should have two columns - one with the owner of the mailbox and the other with the delegates. Check out [delegatesInfo.csv](delegatesInfo.csv) for reference.
-3. 
+3. There are 3 [try-catch](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_try_catch_finally?view=powershell-7.4) block of codes.
+4. [Add-MailboxPermission](https://learn.microsoft.com/en-us/powershell/module/exchange/add-mailboxpermission?view=exchange-ps) will grant the delegate full access to the mailbox.
+5. [Add-RecipientPermission](https://learn.microsoft.com/en-us/powershell/module/exchange/add-recipientpermission?view=exchange-ps) will grant the delegate permission to send email as the mailbox owner.
+6. Using [Set-Mailbox](https://learn.microsoft.com/en-us/powershell/module/exchange/set-mailbox?view=exchange-ps) and [GrantSendOnBehalfTo](https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-permissions-for-recipients#use-exchange-online-powershell-to-assign-the-send-on-behalf-permission-to-mailboxes-and-groups) will permit the delegate to send an email on behalf of the mailbox owner.
+7. All activities will log into [log.txt](log.txt) for review.
