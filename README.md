@@ -6,4 +6,4 @@ You can grant the supervisor's [fullAccess](https://learn.microsoft.com/en-us/mi
 
 Imagine you have to do this to more than 10 users. It is best to use a script.
 
-# About the [script: add-delegates-to-mailbox.ps1]()
+# About the [script: add-delegates-to-mailbox.ps1](add-delegates-to-mailbox.ps1)
