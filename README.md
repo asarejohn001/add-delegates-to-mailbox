@@ -8,4 +8,6 @@ Imagine you have to do this to more than 10 users. It is best to use a script.
 
 # About the script, [add-delegates-to-mailbox.ps1](add-delegates-to-mailbox.ps1)
 I wrote the script to:
-1. test
+1. Connect to EAC using [Connect-ExchangeOnline](https://learn.microsoft.com/en-us/powershell/module/exchange/connect-exchangeonline?view=exchange-ps). This is the best method if your environment uses MFA authentication.
+2. Import in the CSV file. The file should have two columns - one with the owner of the mailbox and the other with the delegates. Check out [delegatesInfo.csv](delegatesInfo.csv) for reference.
+3. 
